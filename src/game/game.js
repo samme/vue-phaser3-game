@@ -1,24 +1,42 @@
 import Phaser from 'phaser'
+import FirstScene from './scenes/FirstScene'
 import BootScene from './scenes/BootScene'
 import PlayScene from './scenes/PlayScene'
 
 
-function launch() {
-  new Phaser.Game({
+const config = {
     type: Phaser.AUTO,
+    parent: 'game-container',
     width: 800,
     height: 600,
-    parent: 'game-container',
     physics: {
-      default: 'arcade',
-      arcade: {
-        gravity: { y: 300 },
-        debug: false
-      }
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 300 },
+            debug: true
+        }
     },
-    scene: [BootScene, PlayScene]
-  })
+    scene: [FirstScene]
+};
+
+
+function launch() {
+    new Phaser.Game(config);
+    // new Phaser.Game({
+    //   type: Phaser.AUTO,
+    //   width: 800,
+    //   height: 600,
+    //   parent: 'game-container',
+    //   physics: {
+    //     default: 'arcade',
+    //     arcade: {
+    //       gravity: { y: 300 },
+    //       debug: false
+    //     }
+    //   },
+    //   scene: [BootScene, PlayScene]
+    // })
 }
 
 export default launch
-export { launch }
+export {launch}
