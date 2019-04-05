@@ -12,7 +12,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style>
 body {
   height: 100vh;
   display: flex;

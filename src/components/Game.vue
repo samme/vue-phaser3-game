@@ -24,7 +24,7 @@
 </script>
 
 
-<style lang="scss" scoped>
+<style scoped>
     .placeholder {
         font-size: 2rem;
         font-family: 'Courier New', Courier, monospace;
