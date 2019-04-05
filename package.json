@@ -1,0 +1,30 @@
+{
+  "name": "vue-phaser3",
+  "description": "Rumens Phaser Game",
+  "keywords": [
+    "vue",
+    "phaser",
+    "webpack",
+    "boilerplate"
+  ],
+  "author": "Markus Appel <markospoparkos@gmail.com>",
+  "version": "2.0.2",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build --modern",
+    "serve": "serve dist"
+  },
+  "dependencies": {
+    "phaser": "^3.16.2",
+    "vue": "^2.6.8"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.0.1",
+    "serve": "^10.1.2",
+    "vue-template-compiler": "^2.6.8"
+  }
+}
