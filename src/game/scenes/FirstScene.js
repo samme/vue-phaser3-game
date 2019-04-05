@@ -14,6 +14,10 @@ export default class FirstScene extends Scene {
     platforms;
     player;
     cursors;
+    playerParams = {
+        vX: 0,
+        vY: 0
+    };
 
     preload() {
         this.load.image('sky', sky);
@@ -64,18 +68,21 @@ export default class FirstScene extends Scene {
 
     update() {
         if (this.cursors.left.isDown) {
-            this.player.setVelocityX(-160);
-            this.player.anims.play('left', true);
+            this.playerParams.vX > -160? this.playerParams.vX -= 5 : null;
+            // this.player.anims.play('left', true);
         } else if (this.cursors.right.isDown) {
-            this.player.setVelocityX(160);
+            this.playerParams.vX < 160? this.playerParams.vX += 5 : null;
             // this.player.anims.play('right', true);
         } else {
-            this.player.setVelocityX(0);
+            this.playerParams.vX > 0? this.playerParams.vX -= 2.5 : null;
+            this.playerParams.vX < 0? this.playerParams.vX += 2.5 : null;
+            // this.player.setVelocityX(0);
             // this.player.anims.play('turn');
         }
+            this.player.setVelocityX(this.playerParams.vX);
 
         if (this.cursors.up.isDown && this.player.body.touching.down) {
-            this.player.setVelocityY(-330);
+            this.player.setVelocityY(-360);
         }
     }
 }
